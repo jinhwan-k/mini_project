@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Webpage Title -->
+    <title>best.16</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+
+            min-height: 100vh;
+            background-image: url(../static/backgroundimage.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .title {
+            font-weight: 800;
+            font-size: 5rem;
+            font-family: 'Jua', sans-serif;
+        }
+
+        .is-sparta {
+            color: #eee !important;
+        }
+
+        .mycards {
+            margin: 20px auto 0px auto;
+            width: 900px;
+            max-width: 1200px;
+        }
+
+        .card-img-top{
+            height: 280px;
+            object-position: top;
+            vertical-align : bottom
+        }
+
+        .log-out {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        img {
+            display:block;
+            }
+
+    </style>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 서버에서 전송해준 사용자 ID, nickname 값 추출 필요시 사용
+            if(window.location.search) {
+                let params = new URLSearchParams(window.location.search);
+                let id1 = params.get("username");
+                let id2 = params.get("nickname");
+                $.cookie("id1", id1);
+                $.cookie("id2", id2);
+            }
+        })
+
+        function log_out(){
+            $.removeCookie('mytoken');
+            window.location.reload();
+        }
+        </script>
+
+</head>
+
+<body>
+<div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+    <p></p>
+    <h1 class="title is-sparta">Laegue</h1>
+
+    <button class="button is-link log-out" onclick="log_out()">로그아웃</button>
+</div>
+
+<div class="mycards">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card">
+                <button onclick="window.location.href='player_select?id=K-league'"> <img src="https://img.hankyung.com/photo/202012/AKR20201217123300007_01_i_P4.jpg" class="card-img-top"
+                     alt="..."></button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <button onclick="window.location.href='player_select?id=Paris-league'"> <img src="https://nimage.g-enews.com/phpwas/restmb_allidxmake.php?idx=5&simg=20200411001645086059ecba8d8b8617764132.jpg"
+                     class="card-img-top" alt="..."></button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <button onclick="window.location.href='player_select?id=Bundes-league'"> <img src="https://t1.daumcdn.net/cfile/tistory/273C133F5822870702" class="card-img-top" alt="..."></button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <button onclick="window.location.href='player_select?id=Premier-league'"> <img src="https://cdn.khgames.co.kr/news/photo/202206/201182_202287_4433.png" class="card-img-top"
+                     alt="..."></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

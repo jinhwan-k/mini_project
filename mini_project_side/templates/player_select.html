@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Webpage Title -->
+    <title>Best.16</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- Font Awesome CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+
+            min-height: 100vh;
+            background-image: url(../static/backgroundimage.jpg);
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .title {
+            font-weight: 800;
+            font-size: 5rem;
+            font-family: 'Jua', sans-serif;
+        }
+
+        .is-sparta {
+            color: #eee !important;
+        }
+
+        .mycards {
+            margin: 20px auto 0px auto;
+            width: 900px;
+            max-width: 1200px;
+        }
+        .card-img-top{
+            height: 280px;
+            object-position: top;
+            vertical-align : bottom
+
+        }
+
+        .log-out {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        img {
+            display:block;
+            }
+    </style>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 서버에서 전달한 파라미터로 선수에 해당하는 버튼 생성
+            let temp_html = ''
+            let id = '{{ id }}'
+            if(id == 'K-league')
+                temp_html = `<div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=lee'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA2MDdfMjk4%2FMDAxNTI4MzA5NTU0OTYy.O3W8aYroxfcQxvlvXMdW91CpKLBbbxoc8Z2nZt7x6XEg.9RK6GuZ-YJLvHFAJFjQ8cGtSs34_ZcesqNrYoU8frVYg.JPEG.123houng%2FexternalFile.jpg&type=sc960_832"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=cho'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA2MjlfMjcz%2FMDAxNTMwMjUzMTc1Mjcx.e84DcmAEbmPvjIp3zo3aUiQ805MvvGLdQKGRahRR8TAg.kiEW2UAWICpKdOD_rdURZVvJOZiNiKlBOb21zJLWzzsg.JPEG.3338775%2FexternalFile.jpg&type=sc960_832"
+                                         class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                   <button onclick="window.location.href='player_comment?card=palk'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxNzA5MjNfNTYg%2FMDAxNTA2MDkzNzE1MDQ5.3qj7yxCaojn9fnmZvBbQFfCQjt8QLLbx6RkaoRtqDsYg.aGXxKtigeKUMxywhjrBgA0kNWmvvwXF2Bnxww24j9g4g.PNG.yuingtion7543%2F%25C7%25C7%25C6%25C418_%25B9%25E9%25BD%25C2%25C8%25A3_%25B4%25C9%25B7%25C2%25C4%25A1.PNG&type=sc960_832" class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=ki'"><img src="https://dszw1qtcnsa5e.cloudfront.net/community/20210601/0a330139-988a-4448-89aa-afeff4d9fe9e/KIfinal.jpg"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>`
+            else if(id == 'Paris-league')
+                temp_html = `<div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=mbappe'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAyMDAzMDlfNzQg%2FMDAxNTgzNjgyMzA2NTA1.3X5SXmUAN8U5dhhY9fSM4v44mY-Iq7hX8_GyQK8J7Nsg.ISvMAChQv39PD7EupMxYoUrCew3gokFOqlXFBnUuen8g.JPEG%2FexternalFile.jpg&type=sc960_832"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=messi'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAyMDA2MjBfMzIg%2FMDAxNTkyNjQwNzgyNzkx.lTzTxMZnwU3k-YrI58NHEyVnTZ7EOwtsR8hxaDniepYg.G5KrbweUpwU6gkO1Jk5HfqkGmIGFJKx1Vs1mk826JKEg.JPEG%2FexternalFile.jpg&type=sc960_832"
+                                         class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                   <button onclick="window.location.href='player_comment?card=neymar'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAyMDA0MjJfMTY5%2FMDAxNTg3NTMwNDQwMTI1.vWqghM7V5tO_7iANC5B-vLlI7Oe5xQJ0X0bp9ZK22Jgg.JISz9MUyXPSgk2gfG7mWpaJ-OWWZMs6QXb3haWXbcVUg.GIF%2FexternalFile.gif&type=sc960_832_gif" class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=hwang'"><img src="https://dszw1qtcnsa5e.cloudfront.net/thumb/20210616/b4896178-afdd-4faa-847b-b7ae28b6456b/%ED%94%BC%ED%8C%8C%EB%AA%A8%EB%B0%94%EC%9D%BC%20%ED%95%A9%EC%84%B1%EC%B9%B4%EB%93%9C%20%ED%99%A9%EC%9D%98%EC%A1%B0.png"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>`
+            else if(id == 'Bundes-league')
+                temp_html = `<div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=jae'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAxODA4MTRfMjUg%2FMDAxNTM0MjM1MDYxMDA1.9N0mO_ymxri_gqQ9Qq6OzuJL7W9qBIY5dBHih-qfLQsg.W3tQwR31-lCa3z06IjzQ23UFHvfJ98J9HneertWr_zkg.PNG.hksb0617%2FexternalFile.png&type=sc960_832"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=reban'"><img src="https://image.fmkorea.com/files/attach/new/20200826/5665468/976585461/3057326806/2f9bbf7a6b859579cdb09cb732961d66.png"
+                                         class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                   <button onclick="window.location.href='player_comment?card=hummels'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20141115_56%2Ffiyo1p17_1416018711740Y5p9i_JPEG%2F740_PicsArt_1416018606142.jpg&type=sc960_832" class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=muller'"><img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2FMjAyMDAzMDVfMTI1%2FMDAxNTgzMzkyMTM1OTM2.Pk1ounZvhj5rD29r_kvKMAzLyWPLht8ots_wF_k1C70g.J15XangSSJK4gwQ9VzH3vdCGq7PG0T9o_CfahqxxUZ0g.JPEG%2FexternalFile.jpg&type=sc960_832"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>`
+            else if(id == 'Premier-league')
+                temp_html = `<div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=kane'"><img src="https://image.fmkorea.com/files/attach/new2/20220506/61440947/5769/4589709490/17cf4273f79ea6121fbbdbe7df220ac5.png"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=salah'"><img src="https://pbs.twimg.com/media/FR69oiHXoAIbUem?format=jpg&name=small"
+                                         class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                   <button onclick="window.location.href='player_comment?card=son'"><img src="https://image.fmkorea.com/files/attach/new2/20220526/61440947/417980998/4659282167/876a8d0e304d9b93162edfb1265b3a24.png" class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <button onclick="window.location.href='player_comment?card=ban'"><img src="https://dszw1qtcnsa5e.cloudfront.net/community/20210821/69de35be-d004-418e-8ec7-1bc46204e5a0/1629455938511.png"
+                                        class="card-img-top" alt="..."></button>
+                                </div>
+                            </div>`
+            $('#card-box').append(temp_html)
+        })
+
+        function log_out(){
+            $.removeCookie('mytoken');
+            window.location.reload();
+        }
+        </script>
+</head>
+
+<body>
+<div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+    <p></p>
+    <h1 class="title is-sparta">{{ id }}</h1>
+
+    <button class="button is-link log-out" onclick="log_out()">로그아웃</button>
+</div>
+
+<div class="mycards">
+    <div id='card-box' class="row row-cols-1 row-cols-md-4 g-4">
+    </div>
+</div>
+</body>
+</html>
